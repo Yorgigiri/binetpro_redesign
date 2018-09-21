@@ -1,0 +1,70 @@
+.aboutCompany {
+    background: $color_light1;
+    position: relative;
+    &__logoTxt {
+        position: absolute;
+        left: 36px;
+        top: 0;
+        width: 876px;
+        height: 205px;
+        margin-bottom: 92px;
+        background: url('../img/binetText__item1.png') no-repeat;
+    }
+    & .inner {
+        padding-top: 222px;
+    }
+    &__text {
+        font-family: $font_light;
+    }
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        margin: 0 -36px;
+        min-height: 205px;
+        &_with-logo {
+            margin-bottom: 92px;
+        }
+    }
+    &__column {
+        padding: 0 36px;
+        position: relative;
+        width: 55%;
+        &:last-child {
+            width: 45%;
+        }
+    }
+    &__title {
+        font-size: 18px;
+        margin-bottom: 40px;
+        font-family: $font_medium;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    &-ways {
+        &__el {
+            display: inline-block;
+            border: 1px solid $color_gray1;
+            border-radius: 3px;
+            font-size: 20px;
+            line-height: 28px;
+            padding: 9px 25px;
+            margin-bottom: 23px;
+            font-family: $font_medium;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    @media screen and (max-width: 1920px) {
+        &__logoTxt {
+            width: 50vw;
+            max-width: 876px;
+            background-size: contain;
+        }
+    }
+    @media screen and (max-width: 1400px) {
+        &__logoTxt {
+            min-height: 170px;
+        }
+    }
+}

@@ -1,0 +1,140 @@
+.recruitForm {
+    display: flex;
+    align-items: center;
+    background: $color_light1;
+    & input[type="file"] {
+        display: none;
+    }
+    &__logo {
+        display: block;
+        width: 100%;
+        max-width: 555px;
+        margin: 0 auto;
+        margin-bottom: 80px;
+    }
+    &__title {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: $font_medium;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    & .inner {
+        max-width: 556px;
+    }
+    &__row {
+        display: flex;
+        margin: 0 -15px;
+        margin-bottom: 40px;
+        &_one-column {
+            margin-bottom: 20px;
+            & .recruitForm__column {
+                width: 100%;
+            }
+        }
+        &_with-submit {
+            align-items: flex-end;
+            & .recruitForm__column {
+                &:first-child {
+                    width: 70%;
+                }
+                &:last-child {
+                    width: 30%;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    &__file {
+        cursor: pointer;
+        font-family: $font_regular;
+        display: block;
+        position: relative;
+        padding: 6px 0;
+        color: $color_gray3;
+        border-bottom: 1px solid $color_gray2;
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 9px;
+            @include sprite($sprite-10);
+        }
+    }
+    &__column {
+        width: 50%;
+        padding: 0 15px;
+    }
+    &__input {
+        font-family: $font_regular;
+        display: block;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 6px 0;
+        color: $color_gray3;
+        border-bottom: 1px solid $color_gray2;
+        @include placeholder {
+            color: $color_gray3;
+        }
+        &:focus {
+            border-bottom: 1px solid $color_blue1;
+        }
+    }
+    &__checkbox {
+        min-height: 29px;
+        padding: 0 0 4px;
+        & input[type="checkbox"] {
+            &:checked {
+                &+label {
+                    &::after {
+                        cursor: pointer;
+                        content: "";
+                        position: absolute;
+                        top: 9px;
+                        left: 9px;
+                        background: $color_dark1;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+        & label {
+            cursor: pointer;
+            display: block;
+            font-size: 13px;
+            line-height: 29px;
+            padding-left: 35px;
+            position: relative;
+            color: $color_gray4;
+            & span {
+                padding-bottom: 2px;
+                border-bottom: 1px dotted $color_gray4;
+            }
+            &::before {
+                content: "";
+                background: $color_light1;
+                border: 2px solid $color_dark1;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 100%;
+            }
+        }
+    }
+    &__submit {
+        display: inline-block;
+        cursor: pointer;
+        color: $color_light1;
+        background: $color_blue1;
+        border: none;
+        border-radius: 50px;
+        min-width: 162px;
+        padding: 11px 15px;
+        outline: none;
+    }
+}

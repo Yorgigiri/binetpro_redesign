@@ -1,0 +1,167 @@
+.achievementsBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color_light1;
+    background-color: $color_dark1;
+    &_puzatru {
+        flex: none;
+        display: block;
+        & .slick-dots {
+            position: absolute;
+            bottom: 54px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0;
+            & li {
+                margin: 0 5px;
+                list-style: none;
+                display: inline-block;
+                & button {
+                    cursor: pointer;
+                    outline: none;
+                    background: $color_gray5;
+                    border: none;
+                    border-radius: 100%;
+                    font-size: 0;
+                    text-indent: -1000px;
+                    overflow: hidden;
+                    width: 11px;
+                    height: 11px;
+                }
+                &.slick-active {
+                    & button {
+                        background: $color_light1;
+                    }
+                }
+            }
+        }
+        & .slick-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $color_dark1;
+            height: 100vh;
+        }
+        & #slick-slide00 {
+            background: url('../img/achievements__bg1.jpg') center no-repeat;
+        }
+        & #slick-slide01 {
+            background: url('../img/achievements__bg2.jpg') center no-repeat;
+        }
+        & #slick-slide02 {
+            background: url('../img/achievements__bg3.jpg') center no-repeat;
+        }
+        & #slick-slide03 {
+            background: url('../img/achievements__bg1.jpg') center no-repeat;
+        }
+    }
+    &_kinza {
+        background: url('../img/achievements__bg2.jpg') center no-repeat;
+    }
+    &_zhazhda {
+        background: url('../img/achievements__bg3.jpg') center no-repeat;
+    }
+    &_services {
+        background: url('../img/achievements__bg4.jpg') center no-repeat;
+    }
+    &-list {
+        display: flex;
+        justify-content: center;
+        &__el {
+            text-align: center;
+            padding: 0 34px;
+            &-number {
+                font-size: 60px;
+                line-height: 64px;
+                text-transform: uppercase;
+            }
+            &-description {
+                font-size: 15px;
+                line-height: 20px;
+            }
+        }
+    }
+    &__title {
+        font-size: 72px;
+        line-height: 80px;
+        text-align: center;
+        font-family: $font_black;
+        text-transform: uppercase;
+    }
+    &__description {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 60px;
+        text-align: center;
+        font-family: $font_light;
+    }
+    &__icon {
+        height: 58px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        &::before {
+            content: "";
+            display: block;
+            margin: 0 auto;
+        }
+        &_1 {
+            &::before {
+                @include sprite($sprite-3);
+            }
+        }
+        &_2 {
+            &::before {
+                @include sprite($sprite-4);
+            }
+        }
+        &_3 {
+            &::before {
+                @include sprite($sprite-5);
+            }
+        }
+        &_4 {
+            &::before {
+                @include sprite($sprite-6);
+            }
+        }
+        &_5 {
+            &::before {
+                @include sprite($sprite-4);
+            }
+        }
+        &_6 {
+            &::before {
+                @include sprite($sprite-7);
+            }
+        }
+        &_7 {
+            &::before {
+                @include sprite($sprite-4);
+            }
+        }
+        &_8 {
+            &::before {
+                @include sprite($sprite-8);
+            }
+        }
+        &_9 {
+            &::before {
+                @include sprite($sprite-9);
+            }
+        }
+        &_10 {
+            &::before {
+                @include sprite($sprite-4);
+            }
+        }
+        &_11 {
+            &::before {
+                @include sprite($sprite-9);
+            }
+        }
+    }
+}

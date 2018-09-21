@@ -1,0 +1,56 @@
+// primary styles
+@import 'normalize';
+@import 'partials/mixins.scss';
+@import 'partials/fonts.scss';
+@import 'partials/sprite.scss';
+@import 'partials/variables-fonts';
+@import 'partials/variables-colors';
+@import 'partials/onepage-scroll.scss';
+@import 'partials/slick.scss';
+@import 'partials/mainMenu.scss';
+@import 'partials/mainHeader.scss';
+// pages
+@import 'pages/frontPage.scss';
+body {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $font_regular;
+    &.viewing-page {
+        // .viewing-page - класс, просматриваемого блока на главной странице
+        &-1 {
+            & .mainHeader__logo {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+        &-2,
+        &-7 {
+            & .mainHeader__logo {
+                background: url('../img/header__logo_blue.png') no-repeat;
+            }
+            & .mainMenu {
+                &__link {
+                    color: $color_dark2;
+                    &:hover,
+                    &:focus {
+                        &:before {
+                            background: $color_dark2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: none;
+}
+
+.inner {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}

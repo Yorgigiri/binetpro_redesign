@@ -1,0 +1,17 @@
+.mainHeader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 48px 0;
+    z-index: 1;
+    & .inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__logo {
+        width: 165px;
+        height: 21px;
+        background: url('../img/header__logo.png') no-repeat;
+    }
+}

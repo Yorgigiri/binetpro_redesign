@@ -1,0 +1,76 @@
+.firstBlock {
+    background-color: $color_dark1;
+    color: $color_light1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    letter-spacing: 0.1px;
+    & .inner {
+        text-align: center;
+    }
+    &__logo {
+        width: 1140px;
+        margin: 0 auto;
+        height: 146px;
+    }
+    &__text {
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-family: $font_bold;
+        text-transform: uppe rcase;
+    }
+    &__link {
+        opacity: 0.6;
+        font-size: 10px;
+        line-height: 12px;
+        color: $color_light1;
+        text-decoration: none;
+        font-family: $font_light;
+        text-align: center;
+        text-transform: uppercase;
+        padding-right: 30px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -6px;
+            @include sprite($sprite-2);
+        }
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+    }
+    &__toBottom {
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        margin-left: -17px;
+        bottom: 60px;
+        border-radius: 100%;
+        width: 34px;
+        height: 34px;
+        background: $color_light1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            content: "";
+            display: block;
+            @include sprite($sprite-1);
+        }
+    }
+    @include desktop {
+        &__logo {
+            background: url(../img/firstblock__logo.png) no-repeat;
+            margin-top: 18%;
+            margin-bottom: 120px;
+        }
+    }
+}
