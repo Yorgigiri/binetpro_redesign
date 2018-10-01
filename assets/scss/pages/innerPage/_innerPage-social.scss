@@ -1,0 +1,24 @@
+.innerPage-social {
+    display: flex;
+    font-size: 0;
+    & .ya-share2__list {
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+    & .ya-share2__item {
+        list-style: none;
+    }
+    & .ya-share2__item_service_vkontakte .ya-share2__icon {
+        @include sprite($sprite-22);
+        display: block;
+        margin-right: 10px;
+    }
+    & .ya-share2__item_service_facebook .ya-share2__icon {
+        display: block;
+        @include sprite($sprite-21);
+    }
+    & .ya-share2__title {
+        display: none;
+    }
+}

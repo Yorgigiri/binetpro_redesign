@@ -1,3 +1,19 @@
+@keyframes aaa {
+    0% {
+        position: absolute;
+        width: 6100em;
+        top: 0;
+        left: -21%;
+    }
+    100% {
+        position: relative;
+        width: 100%;
+        left: initial;
+        top: initial;
+        margin-top: 0;
+        max-width: 555px;
+    }
+}
 .recruitForm {
     display: flex;
     align-items: center;
@@ -7,10 +23,12 @@
     }
     &__logo {
         display: block;
-        width: 100%;
-        max-width: 555px;
+        // width: 100%;
+        // max-width: 555px;
         margin: 0 auto;
         margin-bottom: 80px;
+        z-index: 1;
+        // animation: aaa 1s infinite linear;
     }
     &__title {
         font-size: 18px;
@@ -18,6 +36,13 @@
         font-family: $font_medium;
         text-transform: uppercase;
         margin-bottom: 30px;
+    }
+    &__description {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 25px;
+        color: $color_gray5;
+        font-family: $font_light;
     }
     & .inner {
         max-width: 556px;
@@ -27,13 +52,13 @@
         margin: 0 -15px;
         margin-bottom: 40px;
         &_one-column {
-            margin-bottom: 20px;
             & .recruitForm__column {
                 width: 100%;
             }
         }
         &_with-submit {
             align-items: flex-end;
+            margin-bottom: 0;
             & .recruitForm__column {
                 &:first-child {
                     width: 70%;
@@ -136,5 +161,9 @@
         min-width: 162px;
         padding: 11px 15px;
         outline: none;
+        &:disabled {
+            background: $color_gray2;
+            cursor: not-allowed;
+        }
     }
 }

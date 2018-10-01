@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="homePage">
 
 <head>
     <meta charset="UTF-8">
@@ -7,14 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Главная страница</title>
 </head>
-
 <body>
-    <header class="mainHeader">
+    <header class="mainHeader mainHeader_fixed">
         <div class="inner">
             <a href="#" class="mainHeader__logo"></a>
             <div class="mainMenu">
-                <div class="mainMenu__inner inner">
-                    <a href="#" class="mainMenu__link">Мы</a>
+                <div class="mainMenu__inner">
+                    <a href="#" class="mainMenu__link mainMenu__link_active">Мы</a>
                     <a href="#" class="mainMenu__link">Карьера</a>
                     <a href="#" class="mainMenu__link">Новости</a>
                     <a href="#" class="mainMenu__link">Контакты</a>
@@ -25,6 +24,7 @@
 
     <div id="mainOnePage">
         <section class="firstBlock">
+            <div class="firstBlock__preload-images"></div>
             <div class="inner">
                 <div class="firstBlock__logo"></div>
                 <div class="firstBlock__text">Командная работа</div>
@@ -234,7 +234,8 @@
         </section>
         <section class="recruitForm">
             <div class="inner">
-                <img class="recruitForm__logo" src="img/recruitForm__logo.png">
+                <!-- <img class="recruitForm__logo" src="img/recruitForm__logo.png"> -->
+                <img class="recruitForm__logo" src="img/binet_pro_logo_svg.svg">
                 <div class="recruitForm__title">Хотите стать частью команды? <br>Расскажите о себе</div>
                 <form>
                     <div class="recruitForm__row">
@@ -277,8 +278,9 @@
                     <div class="recruitForm__row recruitForm__row_with-submit">
                         <div class="recruitForm__column">
                             <div class="recruitForm__checkbox">
-                                <input type="checkbox" id="checkAgreement">
-                                <label for="checkAgreement"><span>Согласие на обработку персональных данных</span></label>
+                                <input type="checkbox" id="checkAgreement" checked>
+                                <label class="js-checkTheCheckbox" for="checkAgreement"><span>Согласие на обработку
+                                        персональных данных</span></label>
                             </div>
                         </div>
                         <div class="recruitForm__column">
@@ -289,7 +291,6 @@
             </div>
         </section>
     </div>
-
     <link rel="stylesheet" href="css/main.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>

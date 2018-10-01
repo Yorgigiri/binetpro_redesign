@@ -1,0 +1,49 @@
+.innerPage-vacancies {
+    font-size: 0;
+    &__el {
+        margin-right: 20px;
+        margin-bottom: 22px;
+        display: inline-block;
+        color: $color_dark2;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        font-size: 20px;
+        line-height: 28px;
+        padding: 9px 25px;
+        margin-bottom: 23px;
+        font-family: $font_medium;
+        text-decoration: none;
+        &:focus,
+        &:hover {
+            color: $color_light1;
+            background: $color_dark2;
+            border: 1px solid $color_dark2;
+        }
+    }
+    &__backToVacancies {
+        display: flex;
+        align-items: center;
+        color: $color_dark2;
+        font-size: 0;
+        text-decoration: none;
+        &::before {
+            content: "";
+            display: inline-block;
+            min-width: $sprite-16-width;
+            @include sprite($sprite-16);
+            margin-right: 14px;
+        }
+        & span {
+            font-size: 14px;
+            line-height: 14px; 
+            display: inline-block;
+            border-bottom: 1px solid $color_gray9;
+            font-family: $font_light;
+        }
+        &:hover {
+            & span {
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+}

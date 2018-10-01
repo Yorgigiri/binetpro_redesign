@@ -1,0 +1,64 @@
+.feedback {
+    padding: 45px 0 20px;
+    &-form {
+        &__row {
+            display: flex;
+        }
+        &__column {
+            width: 30%;
+            &_with-textarea {
+                width: 70%;
+                padding-left: 90px;
+            }
+        }
+        &__input {
+            font-family: $font_regular;
+            display: block;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 6px 0;
+            color: $color_gray3;
+            border-bottom: 1px solid $color_dark2;
+            margin-bottom: 35px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            @include placeholder {
+                color: $color_gray7;
+            }
+            &:focus {
+                border-bottom: 1px solid $color_blue1;
+            }
+        }
+        &__textarea {
+            display: block;
+            width: 100%;
+            border: 1px solid $color_dark2;
+            resize: vertical;
+            min-height: 100px;
+            &:focus {
+                border: 1px solid $color_blue1;
+            }
+        }
+        &__submit {
+            &-wrapper {
+                text-align: right;
+                padding: 25px 0;
+            }
+            display: inline-block;
+            cursor: pointer;
+            color: $color_light1;
+            background: $color_blue1;
+            border: none;
+            border-radius: 50px;
+            min-width: 162px;
+            padding: 11px 15px;
+            outline: none;
+            &:disabled {
+                background: $color_gray2;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

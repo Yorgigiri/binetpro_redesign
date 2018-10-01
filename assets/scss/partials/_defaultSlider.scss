@@ -1,0 +1,47 @@
+.defaultSlider {
+    &_fullWidth {
+        max-width: 1920px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    &__el {
+        & a {
+            outline: none;
+        }
+    }
+    & .slick-dots,
+    & .slick-arrow {
+        display: none !important;
+    }
+    &-position {
+        color: $color_gray4;
+        margin: 0 30px;
+    }
+    &-arrows {
+        padding: 20px 0 0;
+        &_centered {
+            display: flex;
+            justify-content: center;
+        }
+        &__inner {
+            display: flex;
+            align-items: center;
+        }
+        &__arrow {
+            display: block;
+            cursor: pointer;
+            &-prev {
+                @include sprite($sprite-15);
+            }
+            &-next {
+                @include sprite($sprite-15);
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &#outsideTheOffice {
+        & .slick-slide img {
+            margin: 0 auto;
+        }
+    }
+}

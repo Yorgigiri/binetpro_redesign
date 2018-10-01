@@ -1,0 +1,29 @@
+.innerPage-box {
+    padding: 70px 0;
+    &_vacancy {
+        max-width: 795px;
+    }
+    &_delimiter {
+        border-bottom: 1px solid $color_gray8;
+        &-bold {
+            border-bottom: 5px solid $color_dark2;
+        }
+        &-top {
+            border-top: 1px solid $color_gray8;
+        }
+    }
+    &__inner {
+        display: flex;
+        margin: 0 -15px;
+    }
+    &__column {
+        width: 50%;
+        margin: 0 15px;
+    }
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 554px;
+    }
+}

@@ -1,0 +1,42 @@
+@keyframes firstBlockBackgroundChanger {
+    0% {
+        background-color: $keyframe_color2;
+    }
+    25% {
+        background-color: $keyframe_color3;
+    }
+    50% {
+        background-color: $keyframe_color4;
+    }
+    70% {
+        background-color: $keyframe_color5;
+    }
+    95% {
+        background-color: $keyframe_color2;
+    }
+    100% {
+        background-color: $keyframe_color2;
+    }
+}
+
+@keyframes firstBlockLogoChanger {
+    0% {
+        background-image: url('../img/firstblock__logo2.png');
+    }
+    25% {
+        background-image: url('../img/firstblock__logo3.png');
+    }
+    50% {
+        background-image: url('../img/firstblock__logo4.png');
+    }
+    70% {
+        background-image: url('../img/firstblock__logo5.png');
+    }
+    95% {
+        background-image: url('../img/firstblock__logo2.png');
+    }
+    100% {
+        background-image: url('../img/firstblock__logo2.png');
+    }
+}
+

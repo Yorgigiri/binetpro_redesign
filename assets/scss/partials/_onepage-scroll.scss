@@ -1,5 +1,5 @@
-body,
-html {
+html.homePage,
+html.homePage body {
     margin: 0;
     overflow: hidden;
     -webkit-transition: opacity 400ms;
@@ -7,9 +7,9 @@ html {
     transition: opacity 400ms;
 }
 
-body,
 .onepage-wrapper,
-html {
+html.homePage,
+html.homePage body {
     display: block;
     position: static;
     padding: 0;

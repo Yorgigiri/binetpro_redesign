@@ -1,23 +1,32 @@
 // primary styles
 @import 'normalize';
-@import 'partials/mixins.scss';
-@import 'partials/fonts.scss';
-@import 'partials/sprite.scss';
+@import 'partials/mixins';
+@import 'partials/fonts';
+@import 'partials/sprite';
 @import 'partials/variables-fonts';
 @import 'partials/variables-colors';
-@import 'partials/onepage-scroll.scss';
-@import 'partials/slick.scss';
-@import 'partials/mainMenu.scss';
-@import 'partials/mainHeader.scss';
+@import 'partials/onepage-scroll';
+@import 'partials/slick';
+@import 'partials/mainMenu';
+@import 'partials/mainHeader';
+@import 'partials/mainFooter';
+@import 'partials/topFullWidthSlider';
+@import 'partials/defaultSlider';
+@import 'partials/feedback';
+@import 'partials/keyframesFirstblock';
+@import 'partials/iziModal'; // modal plugin default styles
+@import 'partials/newsModal'; // news modal custom styles
 // pages
-@import 'pages/frontPage.scss';
+@import 'pages/frontPage';
+@import 'pages/innerPage';
 body {
     font-size: 16px;
     line-height: 24px;
     font-family: $font_regular;
     &.viewing-page {
         // .viewing-page - класс, просматриваемого блока на главной странице
-        &-1 {
+        &-1,
+        &-7 {
             & .mainHeader__logo {
                 visibility: hidden;
                 opacity: 0;
@@ -25,9 +34,6 @@ body {
         }
         &-2,
         &-7 {
-            & .mainHeader__logo {
-                background: url('../img/header__logo_blue.png') no-repeat;
-            }
             & .mainMenu {
                 &__link {
                     color: $color_dark2;
@@ -38,9 +44,120 @@ body {
                         }
                     }
                 }
+                & li {
+                    & a {
+                        color: $color_dark2;
+                        &:hover,
+                        &:focus {
+                            &:before {
+                                background: $color_dark2;
+                            }
+                        }
+                    }
+                    &.current-menu-item,
+                    &.current-menu-parent {
+                        & a {
+                            color: $color_dark2;
+                            &:before {
+                                background: $color_dark2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-2 {
+            & .mainHeader__logo {
+                background: url('../img/header__logo_blue.png') no-repeat;
             }
         }
     }
+    &.defaultPage {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        & .mainHeader__logo {
+            background: url('../img/header__logo_blue.png') no-repeat;
+        }
+        & .mainMenu {
+            &__link {
+                color: $color_dark2;
+                &:hover,
+                &:focus {
+                    &:before {
+                        background: $color_dark2;
+                    }
+                }
+            }
+            & li {
+                & a {
+                    color: $color_dark2;
+                }
+                &.current-menu-item,
+                &.current-menu-parent {
+                    & a {
+                        color: $color_dark2;
+                        &:before {
+                            background: $color_dark2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Заголовки
+.h1 {
+    font-size: 36px;
+    line-height: 42px;
+    color: $color_dark2;
+    font-family: $font_medium;
+    font-weight: normal;
+    &_hidden {
+        display: none;
+    }
+}
+
+.h2 {
+    font-size: 30px;
+    line-height: 36px;
+    color: $color_dark2;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 45px;
+    font-family: $font_medium;
+    font-weight: normal;
+}
+
+.h3 {
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1px;
+    color: $color_gray3;
+    font-family: $font_medium;
+    font-weight: normal;
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $font_light;
+    margin-bottom: 30px;
+    color: $color_gray4;
+}
+
+b,
+strong {
+    font-family: $font_medium;
+    color: $color_gray3;
+    font-weight: normal;
+}
+
+i {
+    font-family: $font_light;
 }
 
 input[type="checkbox"],
@@ -50,7 +167,28 @@ input[type="radio"] {
 
 .inner {
     max-width: 1170px;
-    width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+.mainButton {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    min-width: 130px;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    font-family: $font_light;
+    color: $color_light1;
+    background: $color_blue1;
+    &__wrapper {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 0;
+    }
 }

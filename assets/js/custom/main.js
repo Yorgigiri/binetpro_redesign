@@ -1,25 +1,114 @@
-onePageScroll("#mainOnePage", {
-    sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
-    easing: "cubic-bezier(0.65, 0.05, 0.34, 1.01)",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
-    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-    animationTime: 300,             // AnimationTime let you define how long each section takes to animate
-    pagination: false,                // You can either show or hide the pagination. Toggle true for show, false for hide.
-    updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-    beforeMove: function (index) { },  // This option accepts a callback function. The function will be called before the page moves.
-    afterMove: function (index) { },   // This option accepts a callback function. The function will be called after the page moves.
-    loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-    keyboard: true,                  // You can activate the keyboard controls
-    responsiveFallback: false        // You can fallback to normal page scroll by defining the width of the browser in which
-    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
-    // the browser's width is less than 600, the fallback will kick in.
-});
-
+import { DefaultSliderCustomNavi } from './partials/DefaultSliderCustomNavi';
+import './partials/gmaps';
 $(function () {
     // DOM ready
+
+    if ($('#mainOnePage').length != 0) {
+        onePageScroll("#mainOnePage", {
+            sectionContainer: "section",
+            loop: false,
+            pagination: false,
+            responsiveFallback: false
+        });
+    }
+
+    $('.grid').masonry({
+        // options
+        itemSelector: '.grid-item'
+    });
+
+    if ($('.m-openNewsContent').length != 0 || $('#modal').length != 0) {
+        /**
+         * Проверяем наличие кнопки открытия модального окна с новостью 
+         * на странице новостей и самого модального окна
+         */
+
+        $("#modal").iziModal({
+            radius: 0,
+            width: 1015,
+            title: true,
+            headerColor: '#ffffff'
+        });
+
+        $(document).on('click', '.m-openNewsContent', function (event) {
+            event.preventDefault();
+            $('#modal').iziModal('open');
+        });
+        
+    }
+
+    /**
+     * $('#puzatCarousel').slick - Инициализация слайдера на главной странице
+     */
     $('#puzatCarousel').slick({
         arrows: false,
         dots: true,
-        // lazyLoad: 'progressive',
-        infinite: false
+        fade: true,
+        pauseOnFocus: false,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        infinite: true
     });
+
+    $('#topFullWidthSlider-1').slick({
+        arrows: true,
+        dots: true,
+        lazyLoad: 'progressive',
+        infinite: true
+    });
+
+    $('#capabilitiesSlider').slick({
+        arrows: true,
+        dots: true,
+        lazyLoad: 'progressive',
+        infinite: true
+    });
+
+    $('#officeBoxSlider').slick({
+        arrows: true,
+        dots: true,
+        lazyLoad: 'progressive',
+        infinite: true
+    });
+
+    $('#outsideTheOffice').slick({
+        arrows: true,
+        dots: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        lazyLoad: 'progressive',
+        infinite: true
+    });
+
+    function checkCheckboxCheckedAttr(formSelector, checkboxClicker) {
+        /**
+         * Проверка состояния true аттрибута checked у чекбокса
+         */
+        $(checkboxClicker).on('click', function () {
+            let thisForAttr = $(checkboxClicker).attr('for');
+            let parentForm = $(checkboxClicker).parents(formSelector);
+            let siblingsCheckbox = $(checkboxClicker).siblings('input#' + thisForAttr);
+
+            if (siblingsCheckbox.is(':checked')) {
+                parentForm.find('input[type="submit"]').attr('disabled', true);
+            }
+            else {
+                parentForm.find('input[type="submit"]').attr('disabled', false);
+            }
+        });
+    }
+
+    checkCheckboxCheckedAttr('.recruitForm', '.js-checkTheCheckbox');
+
+
+    let slider1 = new DefaultSliderCustomNavi('#capabilitiesSlider');
+    let slider2 = new DefaultSliderCustomNavi('#officeBoxSlider');
+    let slider3 = new DefaultSliderCustomNavi('#outsideTheOffice');
+    let slider4 = new DefaultSliderCustomNavi('#topFullWidthSlider-1');
+    slider1.init();
+    slider2.init();
+    slider3.init();
+    slider4.rightClick();
+    slider4.leftClick();
+
 });

@@ -1,0 +1,52 @@
+.innerPage-contacts {
+    padding: 60px 0 30px;
+    &__column {
+        width: 50%;
+        padding: 0 15px;
+    }
+    &__row {
+        display: flex;
+        margin: 0 -15px;
+    }
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        &_1 {
+            top: 4px;
+            @include sprite($sprite-17);
+        }
+        &_2 {
+            top: 5px;
+            @include sprite($sprite-18);
+        }
+        &_3 {
+            top: 4px;
+            @include sprite($sprite-19);
+        }
+        &_4 {
+            top: 7px;
+            @include sprite($sprite-20);
+        }
+    }
+    &__el {
+        margin-bottom: 40px;
+        &-title {
+            font-size: 14px;
+            line-height: 24px;
+            color: $color_gray4;
+        }
+        &-info {
+            padding-left: 25px;
+        }
+        &-info,
+        &-info p {
+            font-size: 16px;
+            line-height: 24px;
+            position: relative;
+            font-family: $font_light;
+            color: $color_dark2;
+            margin: 0;
+        }
+    }
+}

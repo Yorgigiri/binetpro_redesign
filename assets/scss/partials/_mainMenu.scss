@@ -1,4 +1,12 @@
 .mainMenu {
+    & li {
+        margin-right: 50px;
+        list-style: none;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    & li a,
     &__link {
         font-size: 14px;
         line-height: 18px;
@@ -23,7 +31,22 @@
             }
         }
     }
+    & li.current-menu-item,
+    & li.current-menu-parent {
+        & a {
+            &:before {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background: $color_light1;
+                position: absolute;
+                bottom: -8px;
+            }
+        }
+    }
     &__inner {
+        margin: 0;
+        padding: 0; 
         display: flex;
         justify-content: flex-end;
     }

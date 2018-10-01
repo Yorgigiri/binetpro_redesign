@@ -1,0 +1,54 @@
+.newsModal {
+    padding: 20px 85px 100px;
+    &__wrapper {
+        & .iziModal {
+            &-header {
+                box-shadow: none;
+                min-height: 40px;
+                &-title {
+                    display: none;
+                }
+                &-buttons {
+                    right: 25px !important;
+                    margin: -19px 0 0 !important;
+                }
+            }
+            &-button {
+                &-close {
+                    background: none;
+                    @include sprite($sprite-24);
+                    width: $sprite-24-width !important;
+                    height: $sprite-24-height !important;
+                    background-size: initial !important;
+                    opacity: 1;
+                    &:hover {
+                        transform: none;
+                    }
+                }
+            }
+        }
+    }
+    &-social {
+        display: flex;
+        & .ya-share2__list {
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        & .ya-share2__item {
+            list-style: none;
+        }
+        & .ya-share2__item_service_vkontakte .ya-share2__icon {
+            @include sprite($sprite-22);
+            display: block;
+            margin-right: 10px;
+        }
+        & .ya-share2__item_service_facebook .ya-share2__icon {
+            display: block;
+            @include sprite($sprite-21);
+        }
+        & .ya-share2__title {
+            display: none;
+        }
+    }
+}

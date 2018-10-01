@@ -1,0 +1,79 @@
+.innerPage-firstBlock {
+    max-width: 1920px;
+    margin: 0 auto;
+    &__title {
+        font-size: 36px;
+        line-height: 42px;
+        text-transform: uppercase;
+        font-family: $font_medium;
+        color: $color_light1;
+        text-align: center;
+    }
+    &_vacancy {
+        background: url('../img/firstBlock-vacancy__bg.jpg') center no-repeat;
+        height: 378px;
+        padding: 0 15px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &_news {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('../img/firstBlock-news__bg.jpg') center no-repeat;
+        height: 644px;
+    }
+    &_contacts {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('../img/firstBlock-contacts__bg.jpg') center no-repeat;
+        height: 637px;
+    }
+    &_career {
+        position: relative;
+        overflow: hidden;
+        & .defaultSlider {
+            &-arrows {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 0;
+                margin: 0 auto;
+                height: 100%;
+                &__inner {
+                    position: relative;
+                    max-width: 1200px;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+                &__arrow {
+                    padding: 0;
+                    cursor: pointer;
+                    font-size: 0;
+                    text-indent: -1000px;
+                    overflow: hidden;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -($sprite-14-height / 2);
+                    z-index: 3;
+                    &-prev {
+                        left: 9px;
+                        @include sprite($sprite-14);
+                    }
+                    &-next {
+                        right: 0;
+                        @include sprite($sprite-14);
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}

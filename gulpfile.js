@@ -63,7 +63,16 @@ gulp.task("images", function () {
     // Прогоняем все картинки из assets через оптимизатор и отправляем в папку dist/img
 
     gulp.src(["assets/img/**/*.*", "!assets/img/sprite/*.*"])
-        .pipe(imagemin())
+        .pipe(imagemin([
+            imagemin.jpegtran({
+                interlaced: true,
+                progressive: true,
+                optimizationLevel: 5,
+
+            })
+        ], {
+                verbose: true
+            }))
         .pipe(gulp.dest("dist/img/"))
         .on("error", util.log);
 
@@ -196,7 +205,7 @@ gulp.task("watch", function () {
     gulp.watch(["./assets/img/sprite/*.png"], ["sprite"]);
 });
 
-gulp.task("serve", ["html", "images", "sprite", "watch", "browser-sync"], function () {
+gulp.task("serve", ["html", "fonts", "images", "sprite", "watch", "browser-sync"], function () {
     // Таск со всеми вотчерами (Следим за файлами - в случае каких либо изменений запускаем соответствующие таски)
 
     gulp.watch("./assets/scss/**/*.scss", ["sass:serve"]);
@@ -210,5 +219,5 @@ gulp.task("serve", ["html", "images", "sprite", "watch", "browser-sync"], functi
 
 });
 
-gulp.task("build", ["clean", "fonts", "sprite", "html", "sass:build", "js:build", "js_libs"]);
+gulp.task("build", ["fonts", "sprite", "images", "html", "sass:build", "js:build", "js_libs"]);
 gulp.task("default", ["serve"]);

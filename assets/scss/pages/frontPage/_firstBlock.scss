@@ -7,6 +7,14 @@
     justify-content: center;
     position: relative;
     letter-spacing: 0.1px;
+    animation: firstBlockBackgroundChanger 6s infinite normal;
+    animation-timing-function: ease-in-out;
+    &__preload-images {
+        // background: url("../img/firstblock__logo.png") no-repeat -9999px -9999px;
+        // background: url("../img/firstblock__logo2.png") no-repeat -9999px -9999px, url("../img/firstblock__logo3.png") no-repeat -9999px -9999px, url("../img/firstblock__logo4.png") no-repeat -9999px -9999px, url("../img/firstblock__logo5.png") no-repeat -9999px -9999px;
+        background: url("../img/firstblock__logo2.png") no-repeat -9999px -9999px;
+        background: url("../img/firstblock__logo3.png") no-repeat -9999px -9999px, url("../img/firstblock__logo4.png") no-repeat -9999px -9999px, url("../img/firstblock__logo5.png") no-repeat -9999px -9999px;
+    }
     & .inner {
         text-align: center;
     }
@@ -68,9 +76,10 @@
     }
     @include desktop {
         &__logo {
-            background: url(../img/firstblock__logo.png) no-repeat;
             margin-top: 18%;
             margin-bottom: 120px;
+            animation: firstBlockLogoChanger 6s infinite normal;
+            animation-timing-function: step-end;
         }
     }
 }
