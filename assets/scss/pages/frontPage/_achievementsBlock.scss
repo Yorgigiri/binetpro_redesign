@@ -99,70 +99,171 @@
         text-align: center;
         font-family: $font_light;
     }
-    &__icon {
-        height: 58px;
-        display: flex;
-        align-items: center;
-        margin-bottom: 30px;
-        &::before {
-            content: "";
-            display: block;
-            margin: 0 auto;
-        }
-        &_1 {
+    @media screen and (min-width: 481px) {
+        &__icon {
+            height: 58px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
             &::before {
-                @include sprite($sprite-3);
+                content: "";
+                display: block;
+                margin: 0 auto;
+            }
+            &_1 {
+                &::before {
+                    @include sprite($sprite-3);
+                }
+            }
+            &_2 {
+                &::before {
+                    @include sprite($sprite-4);
+                }
+            }
+            &_3 {
+                &::before {
+                    @include sprite($sprite-5);
+                }
+            }
+            &_4 {
+                &::before {
+                    @include sprite($sprite-6);
+                }
+            }
+            &_5 {
+                &::before {
+                    @include sprite($sprite-4);
+                }
+            }
+            &_6 {
+                &::before {
+                    @include sprite($sprite-7);
+                }
+            }
+            &_7 {
+                &::before {
+                    @include sprite($sprite-4);
+                }
+            }
+            &_8 {
+                &::before {
+                    @include sprite($sprite-8);
+                }
+            }
+            &_9 {
+                &::before {
+                    @include sprite($sprite-9);
+                }
+            }
+            &_10 {
+                &::before {
+                    @include sprite($sprite-4);
+                }
+            }
+            &_11 {
+                &::before {
+                    @include sprite($sprite-9);
+                }
             }
         }
-        &_2 {
-            &::before {
-                @include sprite($sprite-4);
+    }
+    @include tablet {
+        &__title {
+            line-height: 72px;
+        }
+        &-list {
+            &__el {
+                padding: 0 15px;
+                &-number {
+                    letter-spacing: -1px;
+                }
             }
         }
-        &_3 {
-            &::before {
-                @include sprite($sprite-5);
+        &_puzatru {
+            & .slick-slide {
+                background-size: cover !important;
             }
         }
-        &_4 {
-            &::before {
-                @include sprite($sprite-6);
+        &_services,
+        &_zhazhda,
+        &_kinza {
+            background-size: cover !important;
+        }
+    }
+    @include mobile {
+        & .inner {
+            padding: 100px 15px;
+        }
+        &__icon {
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+        &-list {
+            flex-direction: column;
+            justify-content: center;
+            &__el {
+                text-align: left;
+                position: relative;
+                padding-left: 110px;
+                margin-bottom: 50px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &-number {
+                    font-size: 48px;
+                    line-height: 48px;
+                    margin-bottom: 7px;
+                }
             }
         }
-        &_5 {
-            &::before {
-                @include sprite($sprite-4);
+        &__title {
+            font-size: 48px;
+            line-height: 48px;
+            margin-bottom: 15px;
+        }
+        &__description {
+            font-size: 15px;
+            line-height: 18px;
+        }
+        &_puzatru {
+            & .slick-slide {
+                height: auto;
+            }
+            & .slick-dots {
+                bottom: 34px;
             }
         }
-        &_6 {
-            &::before {
-                @include sprite($sprite-7);
+    }
+    @media screen and (max-width: 480px) {
+        &-list {
+            &__el {
+                padding: 0;
+                margin-bottom: 30px;
+                text-align: center;
+                &-number {
+                    font-size: 24px;
+                    line-height: 28px;
+                    margin-bottom: 10px;
+                    font-family: $font_medium;
+                }
+                &-description {
+                    font-size: 12px;
+                    line-height: 16px;
+                    & br {
+                        display: none;
+                    }
+                }
             }
         }
-        &_7 {
-            &::before {
-                @include sprite($sprite-4);
-            }
+        &__title {
+            font-size: 30px;
+            line-height: 30px;
+            margin-bottom: 10px;
         }
-        &_8 {
-            &::before {
-                @include sprite($sprite-8);
-            }
-        }
-        &_9 {
-            &::before {
-                @include sprite($sprite-9);
-            }
-        }
-        &_10 {
-            &::before {
-                @include sprite($sprite-4);
-            }
-        }
-        &_11 {
-            &::before {
-                @include sprite($sprite-9);
-            }
+        &__description {
+            font-size: 12px;
+            line-height: 14px;
         }
     }
 }

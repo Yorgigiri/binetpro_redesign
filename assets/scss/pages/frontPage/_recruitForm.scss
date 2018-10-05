@@ -14,7 +14,9 @@
         max-width: 555px;
     }
 }
+
 .recruitForm {
+    position: relative;
     display: flex;
     align-items: center;
     background: $color_light1;
@@ -22,13 +24,11 @@
         display: none;
     }
     &__logo {
-        display: block;
-        // width: 100%;
+        display: block; // width: 100%;
         // max-width: 555px;
         margin: 0 auto;
         margin-bottom: 80px;
-        z-index: 1;
-        // animation: aaa 1s infinite linear;
+        z-index: 1; // animation: aaa 1s infinite linear;
     }
     &__title {
         font-size: 18px;
@@ -97,6 +97,8 @@
         border: none;
         outline: none;
         padding: 6px 0;
+        font-size: 16px;
+        line-height: 24px;
         color: $color_gray3;
         border-bottom: 1px solid $color_gray2;
         @include placeholder {
@@ -104,6 +106,46 @@
         }
         &:focus {
             border-bottom: 1px solid $color_blue1;
+        }
+    }
+    &__textarea {
+        font-family: $font_regular;
+        display: block;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 6px 0;
+        color: $color_gray3;
+        border-bottom: 1px solid $color_gray2;
+        resize: none;
+        height: 20px;
+        font-size: 16px;
+        line-height: 24px;
+        resize: none;
+        &-hiddenDiv {
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            opacity: 0;
+            display: block;
+            white-space: pre-wrap;
+            width: 100%;
+            padding: 0 0 0;
+            min-height: 20px;
+            overflow: hidden;
+            word-wrap: break-word;
+            font-size: 16px;
+            line-height: 24px;
+            left: -99999999px;
+        }
+        @include placeholder {
+            color: $color_gray3;
+        }
+        &:focus {
+            border-bottom: 1px solid $color_blue1;
+        }
+        &.noscroll {
+            overflow: hidden;
         }
     }
     &__checkbox {
@@ -164,6 +206,54 @@
         &:disabled {
             background: $color_gray2;
             cursor: not-allowed;
+        }
+    }
+    @include tablet {
+        &__row {
+            margin: 0;
+            margin-bottom: 40px;
+        }
+    }
+    @include mobile {
+        min-height: 780px;
+        & .inner {
+            padding: 35px 15px;
+        }
+        &__logo {
+            width: 100%;
+            max-width: 284px;
+            height: auto;
+            margin: 0 auto 30px;
+        }
+        &__title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        &__row {
+            flex-direction: column;
+            margin-bottom: 0;
+            &_with-submit {
+                padding-top: 20px;
+                & .recruitForm__column:first-child {
+                    width: 100%;
+                }
+                & .recruitForm__column:last-child {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        &__column {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        &__checkbox {
+            & label {
+                line-height: 21px;
+            }
         }
     }
 }

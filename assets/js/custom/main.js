@@ -3,19 +3,46 @@ import './partials/gmaps';
 $(function () {
     // DOM ready
 
-    if ($('#mainOnePage').length != 0) {
+    /**
+	 * Lifehack для автоматического изменения высоты textarea в форме
+	 */
+    $(function () {
+        var txt = $('#comments');
+        var hiddenDiv = $('.recruitForm__textarea-hiddenDiv');
+        var content = null;
+        txt.addClass('noscroll');
+        hiddenDiv.addClass('hiddendiv');
+        txt.bind('keyup', function () {
+            content = txt.val();
+            content = content.replace(/\n/g, '<br>');
+            hiddenDiv.html(content);
+            txt.css('height', hiddenDiv.height() - 4);
+        });
+    });
+
+    if ($('#mainOnePage').length != 0 && window.matchMedia('(min-width: 768px)').matches) {
+
         onePageScroll("#mainOnePage", {
             sectionContainer: "section",
             loop: false,
             pagination: false,
             responsiveFallback: false
         });
+
+        $('.firstBlock__toBottom').on('click', function(){
+            moveDown('#mainOnePage');
+        });
+
     }
 
-    $('.grid').masonry({
-        // options
-        itemSelector: '.grid-item'
+    $('.mainMenu__mobileButtonToggle').on('click', function(){
+        $(this).siblings('.mainMenu').toggleClass('mainMenu_toggled');
     });
+
+    // var $grid = $('.grid').masonry({
+    //     // options
+    //     itemSelector: '.grid-item'
+    // });
 
     if ($('.m-openNewsContent').length != 0 || $('#modal').length != 0) {
         /**
@@ -27,14 +54,36 @@ $(function () {
             radius: 0,
             width: 1015,
             title: true,
-            headerColor: '#ffffff'
+            headerColor: '#ffffff',
+            onOpening: function (modal) {
+
+                modal.startLoading();
+                var addId = $('body').data('added_id');
+                console.log(addId);
+                $.get('/wp-content/themes/binet.pro/ajax/ajax.php?id=' + addId, function (data) {
+                    data = JSON.parse(data);
+
+                    $("#modal .innerPage-news__title").html(data[0].title);
+                    $("#modal .newsModal__content").html(data[0].content);
+                    $("#modal .innerPage-news__date").html(data[0].date);
+                    $("#modal .innerPage-news__img").attr('src', data[0].image);
+                    $("#modal .ya-share2").data('url', data[0].url);
+
+                    modal.stopLoading();
+                });
+            }
         });
 
         $(document).on('click', '.m-openNewsContent', function (event) {
             event.preventDefault();
+
+            var getId = $(this).data('post_id');
+
+            $('body').data('added_id', getId);
             $('#modal').iziModal('open');
+
         });
-        
+
     }
 
     /**
@@ -112,3 +161,4 @@ $(function () {
     slider4.leftClick();
 
 });
+

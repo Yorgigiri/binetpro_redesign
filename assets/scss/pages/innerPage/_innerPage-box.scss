@@ -26,4 +26,11 @@
         height: auto;
         max-width: 554px;
     }
+    @include tablet {
+        margin: 0;
+        
+    }
+    @include mobile {
+        padding: 35px 0;
+    }
 }

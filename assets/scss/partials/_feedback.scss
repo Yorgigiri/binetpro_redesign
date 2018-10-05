@@ -6,9 +6,20 @@
         }
         &__column {
             width: 30%;
+            & .wpcf7-form-control-wrap {
+                display: block;
+                margin-bottom: 35px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
             &_with-textarea {
                 width: 70%;
                 padding-left: 90px;
+                & .wpcf7-form-control-wrap {
+                    display: block;
+                    margin-bottom: 0;
+                }
             }
         }
         &__input {

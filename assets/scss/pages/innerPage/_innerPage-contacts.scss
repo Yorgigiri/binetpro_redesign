@@ -49,4 +49,9 @@
             margin: 0;
         }
     }
+    @include tablet {
+        &__row {
+            margin: 0;
+        }
+    }
 }

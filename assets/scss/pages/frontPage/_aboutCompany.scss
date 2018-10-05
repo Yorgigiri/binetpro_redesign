@@ -1,15 +1,6 @@
 .aboutCompany {
     background: $color_light1;
     position: relative;
-    &__logoTxt {
-        position: absolute;
-        left: 36px;
-        top: 0;
-        width: 876px;
-        height: 205px;
-        margin-bottom: 92px;
-        background: url('../img/binetText__item1.png') no-repeat;
-    }
     & .inner {
         padding-top: 222px;
     }
@@ -65,6 +56,81 @@
     @media screen and (max-width: 1400px) {
         &__logoTxt {
             min-height: 170px;
+        }
+    }
+    @include desktop {
+        &__logoTxt {
+            position: absolute;
+            left: 36px;
+            top: 0;
+            width: 876px;
+            height: 205px;
+            margin-bottom: 92px;
+            background: url('../img/binetText__item1.png') no-repeat;
+        }
+    }
+    @include tablet {
+        display: flex;
+        align-items: center;
+        &__title {
+            margin-bottom: 30px;
+        }
+        &-ways {
+            &__el {
+                font-size: 18px;
+                line-height: 24px;
+                margin-bottom: 18px;
+            }
+        }
+        &__row {
+            flex-direction: column;
+            margin: 0;
+            min-height: initial;
+            &_with-logo {
+                & .aboutCompany__column:last-child {
+                    display: none;
+                }
+            }
+        }
+        &__column {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 25px;
+            &:last-child {
+                width: 100%;
+            }
+        }
+        &__logoTxt {
+            position: relative;
+            left: 0;
+            width: 696px;
+            max-width: 696px;
+            height: 170px;
+            margin-bottom: 0;
+            background-size: contain;
+        }
+        & .inner {
+            padding-top: 65px;
+        }
+    }
+    @include mobile {
+        & .inner {
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+        &__row {
+            &:last-child {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+    @media screen and (max-width: 480px){
+        &-ways {
+            &__el {
+                font-size: 15px;
+                line-height: 21px;
+                padding: 9px 20px;
+            }
         }
     }
 }

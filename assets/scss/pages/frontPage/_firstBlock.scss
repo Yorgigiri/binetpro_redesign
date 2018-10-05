@@ -7,21 +7,11 @@
     justify-content: center;
     position: relative;
     letter-spacing: 0.1px;
-    animation: firstBlockBackgroundChanger 6s infinite normal;
-    animation-timing-function: ease-in-out;
-    &__preload-images {
-        // background: url("../img/firstblock__logo.png") no-repeat -9999px -9999px;
-        // background: url("../img/firstblock__logo2.png") no-repeat -9999px -9999px, url("../img/firstblock__logo3.png") no-repeat -9999px -9999px, url("../img/firstblock__logo4.png") no-repeat -9999px -9999px, url("../img/firstblock__logo5.png") no-repeat -9999px -9999px;
-        background: url("../img/firstblock__logo2.png") no-repeat -9999px -9999px;
-        background: url("../img/firstblock__logo3.png") no-repeat -9999px -9999px, url("../img/firstblock__logo4.png") no-repeat -9999px -9999px, url("../img/firstblock__logo5.png") no-repeat -9999px -9999px;
-    }
     & .inner {
         text-align: center;
     }
     &__logo {
-        width: 1140px;
         margin: 0 auto;
-        height: 146px;
     }
     &__text {
         font-size: 14px;
@@ -30,7 +20,6 @@
         margin-bottom: 15px;
         text-transform: uppercase;
         font-family: $font_bold;
-        text-transform: uppe rcase;
     }
     &__link {
         opacity: 0.6;
@@ -74,12 +63,51 @@
             @include sprite($sprite-1);
         }
     }
-    @include desktop {
+    @media screen and (min-width: 320px) {
         &__logo {
+            width: 265px;
+            height: 35px;
+            margin-bottom: 50px;
+            background: url('../img/mobile/firstBlock__logo320.png') no-repeat;
+        }
+    }
+    @media screen and (min-width: 480px) {
+        &__logo {
+            width: 395px;
+            height: 52px;
+            margin-bottom: 80px;
+            background: url('../img/mobile/firstBlock__logo480.png') no-repeat;
+        }
+    }
+    @media screen and(min-width: 768px) {
+        &__logo {
+            width: 635px;
+            height: 82px;
+            margin-bottom: 115px;
+            background: url('../img/tablet/firstBlock__logo.png') no-repeat;
+        }
+    }
+    @include desktop {
+        animation: firstBlockBackgroundChanger 6s infinite normal;
+        animation-timing-function: ease-in-out;
+        &__preload-images {
+            background: url("../img/firstblock__logo2.png") no-repeat -9999px -9999px;
+            background: url("../img/firstblock__logo3.png") no-repeat -9999px -9999px, url("../img/firstblock__logo4.png") no-repeat -9999px -9999px, url("../img/firstblock__logo5.png") no-repeat -9999px -9999px;
+        }
+        &__logo {
+            width: 1140px;
+            height: 146px;
             margin-top: 18%;
             margin-bottom: 120px;
             animation: firstBlockLogoChanger 6s infinite normal;
             animation-timing-function: step-end;
+        }
+    }
+    @include mobile {
+        min-height: 560px;
+        height: 100vh;
+        &__toBottom {
+            display: none;
         }
     }
 }

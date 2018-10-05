@@ -19,6 +19,14 @@
 // pages
 @import 'pages/frontPage';
 @import 'pages/innerPage';
+.onepage-wrapper,
+html.homePage,
+html.homePage body {
+    @include mobile {
+        overflow: visible;
+    }
+}
+
 body {
     font-size: 16px;
     line-height: 24px;
@@ -106,6 +114,10 @@ body {
             }
         }
     }
+    @media screen and (max-width: 480px){
+        font-size: 14px;
+        line-height: 18px;
+    }
 }
 
 // Заголовки
@@ -129,6 +141,11 @@ body {
     margin-bottom: 45px;
     font-family: $font_medium;
     font-weight: normal;
+    @include mobile {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 35px;
+    }
 }
 
 .h3 {
@@ -147,6 +164,10 @@ p {
     font-family: $font_light;
     margin-bottom: 30px;
     color: $color_gray4;
+    @include mobile {
+        font-size: 14px;
+        line-height: 18px;
+    }
 }
 
 b,

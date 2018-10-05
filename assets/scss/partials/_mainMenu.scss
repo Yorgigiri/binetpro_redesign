@@ -1,4 +1,7 @@
 .mainMenu {
+    &__mobileButtonToggle {
+        display: none;
+    }
     & li {
         margin-right: 50px;
         list-style: none;
@@ -49,5 +52,48 @@
         padding: 0; 
         display: flex;
         justify-content: flex-end;
+    }
+    @include mobile {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        bottom: 0;
+        padding: 78px 0 20px;
+        width: 100%;
+        background: $color_dark1;
+        transition: .2s right ease-in-out;
+        z-index: 998;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__mobileButtonToggle {
+            display: block;
+            position: relative;
+            z-index: 999;
+            & span {
+                display: block;
+                width: 30px;
+                height: 2px;
+                margin-bottom: 8px;
+                background: $color_light1;
+            }
+        }
+        &_toggled {
+            right: 0;
+        }
+        &__inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: -50px;
+        }
+        &__link {
+            margin-right: 0;
+            margin-bottom: 30px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 }
