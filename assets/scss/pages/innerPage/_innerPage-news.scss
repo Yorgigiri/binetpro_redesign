@@ -9,6 +9,8 @@
     }
     &__inner {
         margin: 0 -30px;
+        font-size: 0;
+        text-align: center;
     }
     &__date {
         font-size: 14px;
@@ -64,6 +66,7 @@
             line-height: 22px;
             font-family: $font_light;
             margin-bottom: 28px;
+            text-align: left;
         }
         &-bottom {
             font-size: 14px;
@@ -79,6 +82,45 @@
     @include tablet {
         &__inner {
             margin: 0;
+        }
+    }
+    @include mobile {
+        & .inner {
+            padding-top: 44px;
+            padding-bottom: 64px;
+        }
+        &__el {
+            width: 100%;
+            max-width: 210px;
+            padding: 17px 15px 13px;
+            margin: 0 15px 34px;
+            &-title {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+        &__title {
+            font-size: 20px;
+            line-height: 24px;
+        }
+        &__topInfo {
+            & .innerPage-news {
+                &__row {
+                    margin: 0;
+                    flex-direction: column-reverse;
+                }
+                &__column {
+                    padding: 0;
+                    margin-bottom: 30px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 480px) {
+        &__el {
+            max-width: 240px;
+            margin: 0 0 34px;
         }
     }
 }

@@ -40,17 +40,29 @@ export class DefaultSliderCustomNavi {
     }
 
     setTotalSlides() {
+        // Вычисляем итоговое количество слайдов (а точнее сколько раз мы прокручиваем)
         let num = $(this.sliderId).find('.slick-dots li').length;
         let totalContainer = $(this.sliderId).siblings('.defaultSlider-arrows').find('.defaultSlider-position__total');
         totalContainer.text(num);
     }
 
+    swipeEvent(){
+
+        let self = this;
+        $(this.sliderId).on('swipe', function(){
+            self.setCurrentSlideNum();
+        });
+    }
+
     init() {
+
         this.setCurrentSlideNum();
+        this.swipeEvent();
         this.setTotalSlides();
         this.leftClick();
         this.arrowClick();
         this.rightClick();
+        
     }
 
 }

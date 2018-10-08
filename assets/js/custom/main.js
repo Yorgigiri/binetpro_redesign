@@ -29,13 +29,13 @@ $(function () {
             responsiveFallback: false
         });
 
-        $('.firstBlock__toBottom').on('click', function(){
+        $('.firstBlock__toBottom').on('click', function () {
             moveDown('#mainOnePage');
         });
 
     }
 
-    $('.mainMenu__mobileButtonToggle').on('click', function(){
+    $('.mainMenu__mobileButtonToggle').on('click', function () {
         $(this).siblings('.mainMenu').toggleClass('mainMenu_toggled');
     });
 
@@ -126,7 +126,29 @@ $(function () {
         slidesToShow: 3,
         slidesToScroll: 3,
         lazyLoad: 'progressive',
-        infinite: true
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    arrows: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 479,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    arrows: true,
+                    dots: true
+                }
+            }
+        ]
     });
 
     function checkCheckboxCheckedAttr(formSelector, checkboxClicker) {

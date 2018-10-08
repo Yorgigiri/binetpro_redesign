@@ -145,6 +145,7 @@ body {
         font-size: 24px;
         line-height: 30px;
         margin-bottom: 35px;
+        text-align: center;
     }
 }
 
@@ -156,6 +157,9 @@ body {
     color: $color_gray3;
     font-family: $font_medium;
     font-weight: normal;
+    @include mobile {
+        text-align: center;
+    }
 }
 
 p {

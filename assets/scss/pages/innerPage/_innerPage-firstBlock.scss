@@ -68,12 +68,23 @@
                         @include sprite($sprite-14);
                     }
                     &-next {
-                        right: 0;
+                        right: 9px;
                         @include sprite($sprite-14);
                         transform: rotate(180deg);
                     }
                 }
             }
+        }
+    }
+    @include mobile {
+        &__title {
+            font-size: 30px;
+            line-height: 36px;
+            padding: 0 15px;
+        }
+        &_vacancy,
+        &_news {
+            height: 300px;
         }
     }
 }

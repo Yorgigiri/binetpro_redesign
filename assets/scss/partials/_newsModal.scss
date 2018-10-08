@@ -51,4 +51,19 @@
             display: none;
         }
     }
+    @include mobile {
+        padding: 20px 15px 40px;
+        & .innerPage-news {
+            &__row {
+                margin: 0;
+                flex-direction: column-reverse;
+            }
+            &__column {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 30px;
+            }
+        }
+        
+    }
 }

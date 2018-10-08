@@ -39,9 +39,25 @@
             }
         }
     }
+    &#capabilitiesSlider {
+        // Слайдер "Возможности для развития"
+        margin: 0 -15px;
+        & .innerPage {
+            &-box {
+                &__inner {
+                    margin: 0;
+                }
+            }
+        }
+    }
     &#outsideTheOffice {
+        & .slick-slide {
+            margin: 0 30px;
+        }
         & .slick-slide img {
             margin: 0 auto;
+            width: 100%;
+            height: auto;
         }
     }
     @include tablet {
@@ -49,6 +65,25 @@
             & img {
                 width: 100%;
                 height: auto;
+            }
+        }
+    }
+    @include mobile {
+        &#capabilitiesSlider {
+            & .slick-slide img {
+                max-width: 554px;
+                margin: 20px auto 0;
+            }
+        }
+        &#officeBoxSlider {
+            padding: 20px 0;
+            width: 100%;
+            max-width: 554px;
+            margin: 0 auto;
+        }
+        &#outsideTheOffice {
+            & .slick-slide {
+                margin: 0 15px;
             }
         }
     }

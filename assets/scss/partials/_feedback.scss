@@ -48,6 +48,8 @@
             border: 1px solid $color_dark2;
             resize: vertical;
             min-height: 100px;
+            padding: 20px 15px;
+            box-sizing: border-box;
             &:focus {
                 border: 1px solid $color_blue1;
             }
@@ -69,6 +71,39 @@
             &:disabled {
                 background: $color_gray2;
                 cursor: not-allowed;
+            }
+        }
+    }
+    @include tablet {
+        &-form {
+            &__column {
+                width: 40%;
+                &_with-textarea {
+                    width: 60%;
+                    padding-left: 40px;
+                }
+            }
+        }
+    }
+    @include mobile {
+        padding-left: 0;
+        &-form {
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+            &__row {
+                flex-direction: column;
+            }
+            &__column {
+                width: 100%;
+                margin-bottom: 62px;
+                &_with-textarea {
+                    width: 100%;
+                    padding-left: 0;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }

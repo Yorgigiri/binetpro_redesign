@@ -28,9 +28,44 @@
     }
     @include tablet {
         margin: 0;
-        
     }
     @include mobile {
         padding: 35px 0;
+        &__inner {
+            flex-direction: column;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        &__column {
+            width: 100%;
+            margin: 0;
+        }
+        &_withForm {
+            & .innerPage {
+                &-box {
+                    &__img {
+                        display: none;
+                    }
+                    &__inner {
+                        padding: 0;
+                        max-width: 556px;
+                        width: 100%;
+                        margin: 0 auto;
+                    }
+                    &__column {
+                        width: auto;
+                    }
+                }
+            }
+            & .recruitForm {
+                justify-content: center;
+                &__title {
+                    margin-bottom: 30px;
+                }
+                &__description {
+                    text-align: center;
+                }
+            }
+        }
     }
 }
