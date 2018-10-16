@@ -1,5 +1,5 @@
 import { DefaultSliderCustomNavi } from './partials/DefaultSliderCustomNavi';
-import './partials/gmaps';
+import './partials/yandex_maps';
 $(function () {
     // DOM ready
 
@@ -37,12 +37,82 @@ $(function () {
 
     $('.mainMenu__mobileButtonToggle').on('click', function () {
         $(this).siblings('.mainMenu').toggleClass('mainMenu_toggled');
+        $(this).toggleClass('mainMenu__mobileButtonToggle_menuIsVisible');
     });
+
+    if (window.matchMedia('(max-width: 768px)').matches) {
+
+        window.onscroll = function () {
+
+            (function () {
+                /**
+                 * Анонимная функция с добавлением класса к главной шапке в зависимости от положения скролла
+                 *  */
+
+                let scrolled = window.pageYOffset || document.documentElement.scrollTop; // total window offset
+                let firstBlockScrolled = $('#checkpointBlockOne');
+                let secondBlockScrolled = $('#checkpointBlockTwo');
+                let mainHeader = $('.mainHeader');
+                let one = getOffsetAndHeight(firstBlockScrolled);
+                let two = getOffsetAndHeight(secondBlockScrolled);
+
+                function getOffsetAndHeight(element) {
+                    let object = {};
+                    let bottomOffsetCalculate = element.offset().top + element.height();
+
+                    object.offset = element.offset().top;
+                    object.bottomOffset = bottomOffsetCalculate;
+
+                    return object;
+                }
+
+                function setClassToHeader(object) {
+                    if (scrolled >= object.offset && scrolled < object.bottomOffset) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    };
+                }
+
+                var blackBlock1 = setClassToHeader(one);
+                var blackBlock2 = setClassToHeader(two);
+
+                if (blackBlock1 || blackBlock2) {
+                    mainHeader.addClass('mainHeader_blackTheme');
+                }
+                else {
+                    mainHeader.removeClass('mainHeader_blackTheme');
+                }
+
+            })();
+
+        }
+
+    }
+
 
     // var $grid = $('.grid').masonry({
     //     // options
     //     itemSelector: '.grid-item'
     // });
+
+    if ($('#modal-iframe').length != 0) {
+        // Инициализация модального окна с айфреймом (youtube, vimeo and etc)
+        var videoModal = $('#modal-iframe').iziModal({
+            iframe: true,
+            title: true,
+            width: 900,
+            iframeHeight: 600,
+            headerColor: '#ffffff',
+            iframeURL: "https://www.youtube.com/embed/jTZ-Y4Nbcgg?autoplay=1&rel=0&fs=0&showinfo=0"
+        });
+
+        $('.m--openVideoIframe').on('click', function () {
+            videoModal.iziModal('open');
+        });
+
+    }
 
     if ($('.m-openNewsContent').length != 0 || $('#modal').length != 0) {
         /**
@@ -96,7 +166,15 @@ $(function () {
         pauseOnFocus: false,
         autoplay: true,
         autoplaySpeed: 5000,
-        infinite: true
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    adaptiveHeight: true
+                }
+            }
+        ]
     });
 
     $('#topFullWidthSlider-1').slick({

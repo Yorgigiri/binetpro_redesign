@@ -202,11 +202,13 @@
         &-list {
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             &__el {
                 text-align: left;
                 position: relative;
                 padding-left: 110px;
                 margin-bottom: 50px;
+                width: 175px;
                 &:last-child {
                     margin-bottom: 0;
                 }

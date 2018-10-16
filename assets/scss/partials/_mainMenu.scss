@@ -77,6 +77,11 @@
                 margin-bottom: 8px;
                 background: $color_light1;
             }
+            &_menuIsVisible {
+                & span {
+                    background: $color_light1 !important;
+                }
+            }
         }
         &_toggled {
             right: 0;
@@ -88,6 +93,7 @@
             flex-direction: column;
             margin-top: -50px;
         }
+        & li,
         &__link {
             margin-right: 0;
             margin-bottom: 30px;

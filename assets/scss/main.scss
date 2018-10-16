@@ -16,6 +16,8 @@
 @import 'partials/keyframesFirstblock';
 @import 'partials/iziModal'; // modal plugin default styles
 @import 'partials/newsModal'; // news modal custom styles
+@import 'partials/iframeModal'; // iframe modal custom styles
+@import 'partials/contactsMap'; // dynamical map on the Contacts page
 // pages
 @import 'pages/frontPage';
 @import 'pages/innerPage';
@@ -24,6 +26,21 @@ html.homePage,
 html.homePage body {
     @include mobile {
         overflow: visible;
+    }
+}
+
+html {
+    &.homePage {
+        @include mobile {
+            & .mainHeader {
+                &__logo {
+                    display: none;
+                }
+                & .inner {
+                    justify-content: flex-end;
+                }
+            }
+        }
     }
 }
 
@@ -114,7 +131,7 @@ body {
             }
         }
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 480px) {
         font-size: 14px;
         line-height: 18px;
     }
@@ -188,6 +205,14 @@ i {
 input[type="checkbox"],
 input[type="radio"] {
     display: none;
+}
+
+.slick {
+    &-dots {
+        & button {
+            padding: 0;
+        }
+    }
 }
 
 .inner {

@@ -1,0 +1,25 @@
+.iframeModal {
+    background: $color_dark2 !important;
+    border-bottom: 3px solid $color_dark2 !important;
+    & .iziModal {
+        &-header-title {
+            display: none;
+        }
+        &-button-close {
+            background: none;
+            background-image: url(../img/sprite/sprite.png);
+            background-position: -162px -38px;
+            width: 38px;
+            height: 38px;
+            width: 38px !important;
+            height: 38px !important;
+            background-size: initial !important;
+            opacity: 1;
+        }
+        &-header {
+            min-height: 40px;
+            box-shadow: none;
+            background: $color_dark2 !important;
+        }
+    }
+}

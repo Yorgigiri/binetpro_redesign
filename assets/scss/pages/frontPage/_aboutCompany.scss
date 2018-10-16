@@ -1,8 +1,10 @@
 .aboutCompany {
     background: $color_light1;
     position: relative;
+    display: flex;
+    align-items: center;
     & .inner {
-        padding-top: 222px;
+        padding-top: 117px;
     }
     &__text {
         font-family: $font_light;
@@ -11,10 +13,6 @@
         display: flex;
         align-items: flex-start;
         margin: 0 -36px;
-        min-height: 205px;
-        &_with-logo {
-            margin-bottom: 92px;
-        }
     }
     &__column {
         padding: 0 36px;
@@ -46,6 +44,14 @@
             }
         }
     }
+    @media screen and (min-height: 540px) {
+        &__row {
+            min-height: 205px;
+            &_with-logo {
+                margin-bottom: 92px;
+            }
+        }
+    }
     @media screen and (max-width: 1920px) {
         &__logoTxt {
             width: 50vw;
@@ -66,7 +72,39 @@
             width: 876px;
             height: 205px;
             margin-bottom: 92px;
-            background: url('../img/binetText__item1.png') no-repeat;
+            background-image: url('../img/binetText__item1.png');
+            background-repeat: no-repeat;
+        }
+    }
+    @media screen and (max-height: 700px) and (min-width: 1200px) {
+        &__title {
+            margin-bottom: 20px;
+        }
+        &__logoTxt {
+            background-size: contain;
+            width: 450px;
+            height: 105px;
+            left: 0;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        &__row {
+            min-height: 0;
+            &_with-logo {
+                margin-bottom: 20px;
+            }
+        }
+        &__text {
+            font-size: 14px;
+            line-height: 18px;
+        }
+        &-ways {
+            &__el {
+                font-size: 18px;
+                line-height: 22px;
+                padding: 6px 15px;
+                margin-bottom: 12px;
+            }
         }
     }
     @include tablet {
@@ -124,7 +162,7 @@
             }
         }
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 480px) {
         &-ways {
             &__el {
                 font-size: 15px;

@@ -8,9 +8,12 @@
     <title>Главная страница</title>
 </head>
 <body>
+
+    <div class="iframeModal" id="modal-iframe"></div>
+
     <header class="mainHeader mainHeader_fixed">
         <div class="inner">
-            <a href="#" class="mainHeader__logo"></a>
+            <a href="/" class="mainHeader__logo"></a>
             <div class="mainMenu__mobileButtonToggle">
                 <span></span>
                 <span></span>
@@ -18,10 +21,10 @@
             </div>
             <div class="mainMenu">
                 <div class="mainMenu__inner">
-                    <a href="#" class="mainMenu__link mainMenu__link_active">Мы</a>
-                    <a href="#" class="mainMenu__link">Карьера</a>
-                    <a href="#" class="mainMenu__link">Новости</a>
-                    <a href="#" class="mainMenu__link">Контакты</a>
+                    <a href="/" class="mainMenu__link mainMenu__link_active">Мы</a>
+                    <a href="/career.html" class="mainMenu__link">Карьера</a>
+                    <a href="/news.html" class="mainMenu__link">Новости</a>
+                    <a href="/contacts.html" class="mainMenu__link">Контакты</a>
                 </div>
             </div>
         </div>
@@ -33,12 +36,12 @@
             <div class="inner">
                 <div class="firstBlock__logo"></div>
                 <div class="firstBlock__text">Командная работа</div>
-                <a href="#" class="firstBlock__link">Подробнее</a>
+                <a href="#" class="firstBlock__link m--openVideoIframe">Подробнее</a>
             </div>
             <div class="firstBlock__toBottom"></div>
         </section>
 
-        <section class="aboutCompany">
+        <section class="aboutCompany" id="checkpointBlockOne">
             <div class="inner">
 
                 <div class="aboutCompany__row aboutCompany__row_with-logo">
@@ -69,14 +72,8 @@
                     <div class="aboutCompany__column">
                         <div class="aboutCompany__title">Миссия</div>
                         <div class="aboutCompany__text">
-                            Создать информационную экосистему, которая делает жизнь владельцев и пользователей
-                            сайтов
-                            лучше, удобнее, проще. В наших силах повлиять не только на российский, но и
-                            глобальный
-                            рынок,
-                            поэтому следующая высота BINET.__.PRO - международные проекты в области генерации
-                            трафика,
-                            обучения и автоматизированных сервисов.
+                            Мы развиваем информационную экосистему, в которой есть знания и возможности для создания прибыльного бизнеса в интернете.
+                            В наших силах повлиять не только на российский, но и глобальный рынок, поэтому следующая высота BINET.__.PRO —  международные проекты в области продвижения IT-продуктов.
                         </div>
                     </div>
                 </div>
@@ -237,7 +234,7 @@
                 </div>
             </div>
         </section>
-        <section class="recruitForm">
+        <section class="recruitForm" id="checkpointBlockTwo">
             <div class="inner">
                 <!-- <img class="recruitForm__logo" src="img/recruitForm__logo.png"> -->
                 <img class="recruitForm__logo" src="img/binet_pro_logo_svg.svg">

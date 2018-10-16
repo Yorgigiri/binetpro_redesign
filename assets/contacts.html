@@ -11,13 +11,13 @@
 <body>
     <header class="mainHeader">
         <div class="inner">
-            <a href="#" class="mainHeader__logo"></a>
+            <a href="/" class="mainHeader__logo"></a>
             <div class="mainMenu">
                 <div class="mainMenu__inner">
-                    <a href="#" class="mainMenu__link">Мы</a>
-                    <a href="#" class="mainMenu__link">Карьера</a>
-                    <a href="#" class="mainMenu__link">Новости</a>
-                    <a href="#" class="mainMenu__link mainMenu__link_active">Контакты</a>
+                    <a href="/" class="mainMenu__link">Мы</a>
+                    <a href="/career.html" class="mainMenu__link">Карьера</a>
+                    <a href="/news.html" class="mainMenu__link">Новости</a>
+                    <a href="/contacts.html" class="mainMenu__link mainMenu__link_active">Контакты</a>
                 </div>
             </div>
         </div>
@@ -79,8 +79,9 @@
         </div>
     </div>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2180.5328215644668!2d53.20655651625249!3d56.871106680867264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e138e3b725d905%3A0x445a1184b67ff43d!2z0JjQvdCy0LXRgdGCINCf0LDRgNC6!5e0!3m2!1sru!2sru!4v1537962730779"
-        width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div class="contactsMap">
+        <div class="contactsMap__map" id="map"></div>
+    </div>
 
     <div class="inner">
 
@@ -121,10 +122,12 @@
         </div>
     </footer>
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="js/lib.min.js"></script>
     <script src="js/main.min.js"></script>
+
 </body>
 
 </html>

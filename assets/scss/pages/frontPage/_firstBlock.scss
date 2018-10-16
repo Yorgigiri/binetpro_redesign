@@ -8,7 +8,11 @@
     position: relative;
     letter-spacing: 0.1px;
     & .inner {
+        padding: 117px 0;
         text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
     &__logo {
         margin: 0 auto;
@@ -97,7 +101,6 @@
         &__logo {
             width: 1140px;
             height: 146px;
-            margin-top: 18%;
             margin-bottom: 120px;
             animation: firstBlockLogoChanger 6s infinite normal;
             animation-timing-function: step-end;

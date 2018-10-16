@@ -20,4 +20,15 @@
     @include tablet {
         padding: 30px 0;
     }
+    @include mobile {
+        &_blackTheme {
+            & .mainMenu {
+                &__mobileButtonToggle {
+                    & span {
+                        background: $color_dark2;
+                    }
+                }
+            }
+        }
+    }
 }
