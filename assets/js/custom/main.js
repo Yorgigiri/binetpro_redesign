@@ -91,11 +91,18 @@ $(function () {
 
     }
 
+    if (window.Isotope != undefined) {
 
-    // var $grid = $('.grid').masonry({
-    //     // options
-    //     itemSelector: '.grid-item'
-    // });
+        var isotopeGridElement = document.querySelector('.grid');
+        var isotopeGrid;
+
+        isotopeGrid = new Isotope(isotopeGridElement, {
+            // options
+            itemSelector: '.grid-item',
+            layoutMode: 'fitRows'
+        });
+
+    }
 
     if ($('#modal-iframe').length != 0) {
         // Инициализация модального окна с айфреймом (youtube, vimeo and etc)
