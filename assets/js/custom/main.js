@@ -40,7 +40,7 @@ $(function () {
         $(this).toggleClass('mainMenu__mobileButtonToggle_menuIsVisible');
     });
 
-    if (window.matchMedia('(max-width: 768px)').matches) {
+    if (window.matchMedia('(max-width: 768px)').matches && $('html.homePage').length != 0) {
 
         window.onscroll = function () {
 
