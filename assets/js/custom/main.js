@@ -91,17 +91,17 @@ $(function () {
 
     }
 
-    if (window.Isotope != undefined) {
+    if (window.Isotope != undefined && document.querySelector('.grid') != null) {
 
         var isotopeGridElement = document.querySelector('.grid');
-        var isotopeGrid;
-
-        isotopeGrid = new Isotope(isotopeGridElement, {
-            // options
+        var $isotopeGrid;
+        var isoOptions = {
             itemSelector: '.grid-item',
-            layoutMode: 'fitRows'
-        });
+            layoutMode: 'masonry'
+        }
 
+        $isotopeGrid = new Isotope(isotopeGridElement, isoOptions);
+        
     }
 
     if ($('#modal-iframe').length != 0) {
