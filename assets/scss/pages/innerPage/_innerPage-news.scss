@@ -79,8 +79,17 @@
         }
     }
     @include tablet {
+        & * {
+            box-sizing: border-box;
+        }
         &__inner {
             margin: 0;
+        }
+        &__el {
+            max-width: initial;
+            width: 29.33333%;
+            margin: 0 2% 4%;
+            padding: 32px 20px 23px;
         }
     }
     @include mobile {
@@ -89,10 +98,9 @@
             padding-bottom: 64px;
         }
         &__el {
-            width: 100%;
-            max-width: 210px;
+            width: 46%;
+            max-width: initial;
             padding: 17px 15px 13px;
-            margin: 0 15px 34px;
             &-title {
                 font-size: 14px;
                 line-height: 18px;
@@ -117,8 +125,13 @@
         }
     }
     @media screen and (max-width: 480px) {
+        &__inner {
+            max-width: 300px;
+            margin: 0 auto;
+        }
         &__el {
-            max-width: 240px;
+            max-width: initial;
+            width: 100%;
             margin: 0 0 34px;
         }
     }

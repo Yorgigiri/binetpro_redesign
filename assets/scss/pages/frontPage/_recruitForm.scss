@@ -201,7 +201,7 @@
     @include mobile {
         min-height: 780px;
         & .inner {
-            padding: 35px 15px;
+            padding: 100px 15px;
         }
         &__logo {
             width: 100%;
@@ -212,6 +212,8 @@
         &__title {
             text-align: center;
             margin-bottom: 80px;
+            font-size: 14px;
+            line-height: 18px;
         }
         &_noMinHeight {
             min-height: 0;
