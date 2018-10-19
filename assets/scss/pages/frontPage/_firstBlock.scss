@@ -70,25 +70,25 @@
     @media screen and (min-width: 320px) {
         &__logo {
             width: 265px;
-            height: 35px;
+            height: auto;
             margin-bottom: 50px;
-            background: url('../img/mobile/firstBlock__logo320.png') no-repeat;
+            display: none;
+            background: none;
+            &_mobile {
+                display: block;
+            }
         }
     }
     @media screen and (min-width: 480px) {
         &__logo {
             width: 395px;
-            height: 52px;
             margin-bottom: 80px;
-            background: url('../img/mobile/firstBlock__logo480.png') no-repeat;
         }
     }
     @media screen and(min-width: 768px) {
         &__logo {
             width: 635px;
-            height: 82px;
             margin-bottom: 115px;
-            background: url('../img/tablet/firstBlock__logo.png') no-repeat;
         }
     }
     @include desktop {
@@ -101,9 +101,15 @@
         &__logo {
             width: 1140px;
             height: 146px;
+            display: block;
             margin-bottom: 120px;
             animation: firstBlockLogoChanger 6s infinite normal;
             animation-timing-function: step-end;
+            &_mobile {
+                animation: none;
+                display: none;
+                background: none;
+            }
         }
     }
     @include mobile {

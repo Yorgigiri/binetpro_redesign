@@ -11,6 +11,16 @@
         margin: 0 auto;
         margin-bottom: 80px;
         z-index: 1;
+        @media screen and (min-width: 320px) {
+            width: 265px;
+            height: auto;
+        }
+        @media screen and (min-width: 480px) {
+            width: 395px;
+        }
+        @media screen and(min-width: 768px) {
+            width: 635px;
+        }
     }
     &__title {
         font-size: 18px;
@@ -27,7 +37,7 @@
         font-family: $font_light;
     }
     & .inner {
-        max-width: 556px;
+        max-width: 635px;
     }
     &__row {
         display: flex;
@@ -204,10 +214,7 @@
             padding: 100px 15px;
         }
         &__logo {
-            width: 100%;
-            max-width: 284px;
-            height: auto;
-            margin: 0 auto 30px;
+            margin-bottom: 30px;
         }
         &__title {
             text-align: center;

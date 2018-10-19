@@ -76,6 +76,14 @@
             }
         }
     }
+    @include tablet {
+        &_vacancy,
+        &_contacts,
+        &_news {
+            height: 400px;
+            background-size: cover;
+        }
+    }
     @include mobile {
         &__title {
             font-size: 30px;
@@ -83,8 +91,10 @@
             padding: 0 15px;
         }
         &_vacancy,
+        &_contacts,
         &_news {
             height: 300px;
+            background-size: cover;
         }
     }
 }
