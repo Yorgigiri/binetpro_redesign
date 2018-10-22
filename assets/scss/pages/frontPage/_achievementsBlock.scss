@@ -75,6 +75,12 @@
                 font-size: 60px;
                 line-height: 64px;
                 text-transform: uppercase;
+                &_type2 {
+                    font-size: 38px;
+                    line-height: 42px;
+                    text-transform: none;
+                    margin-bottom: 5px;
+                }
             }
             &-description {
                 font-size: 15px;
@@ -160,6 +166,21 @@
             &_11 {
                 &::before {
                     @include sprite($sprite-9);
+                }
+            }
+            &_12 {
+                &::before {
+                    @include sprite($sprite-25);
+                }
+            }
+            &_13 {
+                &::before {
+                    @include sprite($sprite-26);
+                }
+            }
+            &_14 {
+                &::before {
+                    @include sprite($sprite-27);
                 }
             }
         }
