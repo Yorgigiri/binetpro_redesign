@@ -20,23 +20,86 @@
 }
 
 @keyframes firstBlockLogoChanger {
+    // 0% {
+    //     background-image: url('../img/firstblock__logo2.png');
+    // }
+    // 25% {
+    //     background-image: url('../img/firstblock__logo3.png');
+    // }
+    // 50% {
+    //     background-image: url('../img/firstblock__logo4.png');
+    // }
+    // 70% {
+    //     background-image: url('../img/firstblock__logo5.png');
+    // }
+    // 95% {
+    //     background-image: url('../img/firstblock__logo2.png');
+    // }
+    // 100% {
+    //     background-image: url('../img/firstblock__logo2.png');
+    // }
+
     0% {
         background-image: url('../img/firstblock__logo2.png');
     }
-    25% {
+    19% {
+        background-image: url('../img/firstblock__logo2.png');
+    }
+    20% {
         background-image: url('../img/firstblock__logo3.png');
     }
-    50% {
+    39% {
+        background-image: url('../img/firstblock__logo3.png');
+    }
+    40% {
         background-image: url('../img/firstblock__logo4.png');
     }
-    70% {
+    59% {
+        background-image: url('../img/firstblock__logo4.png');
+    }
+    60% {
         background-image: url('../img/firstblock__logo5.png');
     }
-    95% {
-        background-image: url('../img/firstblock__logo2.png');
+    79% {
+        background-image: url('../img/firstblock__logo5.png');
+    }
+    80% {
+        background-image: url('../img/firstblock__logo4.png');
     }
     100% {
-        background-image: url('../img/firstblock__logo2.png');
+        background-image: url('../img/firstblock__logo4.png');
     }
 }
 
+@keyframes firstBlockAnimatedText {
+    0% {
+        content: "Командная работа";
+    }
+    19% {
+        content: "Командная работа";
+    }
+    20% {
+        content: "Открытость";
+    }
+    39% {
+        content: "Открытость";
+    }
+    40% {
+        content: "Амбициозность";
+    }
+    59% {
+        content: "Амбициозность";
+    }
+    60% {
+        content: "Эффективность";
+    }
+    79% {
+        content: "Эффективность";
+    }
+    80% {
+        content: "Динамичность";
+    }
+    100% {
+        content: "Динамичность";
+    }
+}

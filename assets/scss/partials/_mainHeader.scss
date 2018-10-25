@@ -17,6 +17,15 @@
         height: 21px;
         background: url('../img/header__logo.png') no-repeat;
     }
+    &__logoSvg {
+        width: 165px;
+        height: 21px;
+        & img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
     @include tablet {
         padding: 30px 0;
     }

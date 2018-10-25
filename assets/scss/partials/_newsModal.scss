@@ -1,5 +1,13 @@
 .newsModal {
     padding: 20px 85px 100px;
+    & p {
+        font-size: 16px;
+        line-height: 24px;
+        font-family: $font_light;
+        margin: 0;
+        margin-bottom: 30px;
+        color: #666666;
+    }
     &__wrapper {
         & .iziModal {
             &-header {

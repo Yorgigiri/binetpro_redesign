@@ -90,6 +90,11 @@
             line-height: 36px;
             padding: 0 15px;
         }
+        &_career {
+            & .defaultSlider-arrows {
+                display: none;
+            }
+        }
         &_vacancy,
         &_contacts,
         &_news {

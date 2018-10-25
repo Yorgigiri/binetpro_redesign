@@ -3,12 +3,18 @@
     & .inner {
         padding-top: 88px;
         padding-bottom: 125px;
+        max-width: initial;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+        & * {
+            box-sizing: border-box;
+        }
     }
     &__topInfo {
         max-width: 800px;
     }
     &__inner {
-        margin: 0 -30px;
+        margin: 0;
         font-size: 0;
     }
     &__date {
@@ -47,8 +53,9 @@
         vertical-align: top;
         width: 280px;
         padding: 32px 30px 23px;
-        margin: 0 30px 68px;
+        margin: 0 2.5% 68px;
         background: $color_light1;
+        width: 20%;
         & a {
             text-decoration: none;
             color: $color_dark2;
@@ -76,6 +83,16 @@
             & span {
                 display: block;
             }
+        }
+    }
+    @media screen and (max-width:1500px) {
+        & .inner {
+            padding-left: 1.5%;
+            padding-right: 1.5%;
+        }
+        &__el {
+            width: 22%;
+            margin: 0 1.5% 68px;
         }
     }
     @include tablet {

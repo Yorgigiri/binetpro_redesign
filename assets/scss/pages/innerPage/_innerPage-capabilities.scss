@@ -27,4 +27,9 @@
             }
         }
     }
+    @include mobile {
+        & .innerPage-box__inner {
+            flex-direction: column-reverse;
+        }
+    }
 }

@@ -71,11 +71,26 @@
             }
         }
     }
+    @include tablet {
+        &__img {
+            width: 140%;
+        }
+        &__title {
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 40px;
+        }
+        &__description {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
     @include mobile {
         background: $color_dark1;
         &__img {
-            width: 100%;
+            width: 125%;
             height: auto;
+            margin-left: -100%;
         }
         &__title {
             font-size: 24px;
@@ -85,13 +100,24 @@
         &__description {
             font-size: 16px;
             line-height: 18px;
+            & br {
+                display: none;
+            }
         }
         &__content {
             position: relative;
-            padding: 25px 70px 100px;
+            padding: 50px 25px 100px;
             left: 0;
             right: 0;
-            
+        }
+        & .slick-dots li button {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        &__img {
+            width: 120%;
         }
     }
 }

@@ -7,14 +7,14 @@
         }
         &-button-close {
             background: none;
-            background-image: url(../img/sprite/sprite.png);
-            background-position: -162px -38px;
-            width: 38px;
-            height: 38px;
-            width: 38px !important;
-            height: 38px !important;
+            @include sprite($sprite-24);
+            width: $sprite-24-width !important;
+            height: $sprite-24-height !important;
             background-size: initial !important;
             opacity: 1;
+            &:hover {
+                transform: none;
+            }
         }
         &-header {
             min-height: 40px;

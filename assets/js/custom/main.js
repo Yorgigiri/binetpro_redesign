@@ -100,9 +100,16 @@ $(function () {
             layoutMode: 'masonry'
         }
 
+        setTimeout(function () {
+        }, 200);
         $isotopeGrid = new Isotope(isotopeGridElement, isoOptions);
-        
+
     }
+
+    $('#loadmore_trigger').on('click', function (e) {
+        e.preventDefault();
+        $('#true_loadmore').trigger('click');
+    });
 
     if ($('#modal-iframe').length != 0) {
         // Инициализация модального окна с айфреймом (youtube, vimeo and etc)
@@ -188,14 +195,24 @@ $(function () {
         arrows: true,
         dots: true,
         lazyLoad: 'progressive',
-        infinite: true
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    adaptiveHeight: true
+                }
+            }
+        ]
     });
 
     $('#capabilitiesSlider').slick({
         arrows: true,
         dots: true,
         lazyLoad: 'progressive',
-        infinite: true
+        infinite: true,
+        adaptiveHeight: true
     });
 
     $('#officeBoxSlider').slick({
